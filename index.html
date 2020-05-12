@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick union (lazy approach)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="content flex flex-wrap">
+    <div class="wide divider">
+      <h1 class="mb3">Quick union (lazy approach)</h1>
+    </div>
+    <div class="wide mt4 mb4 flex justify-between">
+      <div
+        class="buuble flex items-center justify-center"
+        v-for="(id, index) in ids"
+        :key="index"
+        :style="{
+          borderColor: colors[id]
+        }"
+      >
+        <b>{{ id }}</b>
+        <div class="bubble-index">{{ index }}</div>
+      </div>
+    </div>
+
+    <div class="wide flex justify-between">
+      <div class="left p3">
+        <h2 class="mb3">Union</h2>
+        <form @submit.stop.prevent="appUnion" class="flex flex-column">
+          <div class="ctrl mb2 flex flex-column">
+            <label for="from" class="mb1">From:</label>
+            <input type="text" v-model="from">
+          </div>
+          <div class="ctrl mb2 flex flex-column">
+            <label for="to" class="mb1">To:</label>
+            <input type="text" v-model="to">
+          </div>
+          <button type="submit">Union</button>
+        </form>
+      </div>
+      <div class="right p3">
+        <h2 class="mb3">Is connected?</h2>
+        <form @submit.stop.prevent="appIsConnected" class="flex flex-column">
+          <div class="ctrl mb2 flex flex-column">
+            <label for="from" class="mb1">From:</label>
+            <input type="text" v-model="from">
+          </div>
+          <div class="ctrl mb2 flex flex-column">
+            <label for="to" class="mb1">To:</label>
+            <input type="text" v-model="to">
+          </div>
+          <button type="submit">Check</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <a class="hire-me" href="mailto:eg@beagl.in">Hire me 😇</a>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="./utils.js"></script>
+  <script src="./quick-union.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
